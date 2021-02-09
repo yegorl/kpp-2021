@@ -1,15 +1,16 @@
 <section>
-  <h1>Git</h1>
-  <h2>Семінар 1</h2>
+  <h1>Робота з Git</h1>
 </section>
 
+
 <section>
-  <h2>SCM</h2>
+  <h2>Системи контролю версій</h2>
 
   <section>
     <h3>Source Code Management</h3>
   </section>
 
+  
   <section>
     <h3>Локальні</h3>
 
@@ -82,11 +83,41 @@ and the name as (depending on your way):
 </section>
 
 <section>
-  <h2>Налагодження</h2>
+  <h2>Налаштування Git ієрархічна концепція</h2>
+
+  <section data-markdown>
+	  <textarea data-template>
+1. Файл */etc/gitconfig* містить налаштування, спільні для всіх користувачів системи і їх репозиторіїв. git config --system.
+2. Файл *~/.gitconfig* або *~/.config/git/config* містить налаштування користувача. git config --global.
+3. Файл *config* в папці Git *(.git/config)* репозиторію. git config.
+	  </textarea>
+  </section>
+</section>
+
+<section>
+  <h2>Переглянути всі налаштування Git</h2>
+
+  <pre><code class="hljs" data-trim contenteditable>
+    $ git config --list --show-origin
+  </code></pre>
+</section>
+
+
+
+<section>
+  <h2>Налаштування для користувача</h2>
 
   <pre><code class="hljs" data-trim contenteditable>
 $ git config --global user.name "John Doe"
 $ git config --global user.email johndoe@example.com
+  </code></pre>
+</section>
+
+<section>
+  <h2>Налаштування для репозиторію</h2>
+  <pre><code class="hljs" data-trim contenteditable>
+$ git config user.name "John Smith"
+$ git config user.email johnsmith@company.com
   </code></pre>
 </section>
 
@@ -106,7 +137,7 @@ Initialized empty Git repository in /home/user/project/.git/
   </section>
 
   <section>
-    <h3>Add files</h3>
+    <h3>Додавання файлів</h3>
 
     <pre><code class="hljs" data-trim contenteditable>
 $ git add README.md
@@ -114,7 +145,38 @@ $ git add README.md
   </section>
 
   <section>
-    <h3>Внесок (commit)</h3>
+    <h3>Список виключень</h3>
+    <h3>Файл .gitignore</h3>
+
+    <pre><code class="hljs" data-trim contenteditable>
+# compiled output
+/dist
+/tmp
+/out-tsc
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+
+# Dependency directories
+node_modules/
+jspm_packages/
+
+    </code></pre>
+  </section>  
+  <section>
+    <h3>Фіксація змін локально (commit)</h3>
 
     <pre><code class="hljs" data-trim contenteditable>
 $ git commit -m "first commit"
@@ -660,6 +722,12 @@ git push
       - [Конспект](lectures/01-javascript.md)
 	  </textarea>
   </section>
+</section>
+
+<section>
+  <h2>Запити на злиття/Pull request</h2>
+
+  <img src="images/git-pull-request.png" />
 </section>
 
 <section>
