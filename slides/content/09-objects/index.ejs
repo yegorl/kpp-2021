@@ -113,7 +113,7 @@ const student = {
 
 const oneMoreStudent = Object.assign({
   name: 'Василь'
-}, student);
+}, student);  //=&gt; {name: 'Василь', group: 'КН'}
     </code></pre>
   </section>
 
@@ -142,7 +142,7 @@ const student = {
 };
 
 const { group } = student;
-group; //=&gt; КН
+console.log(group); //=&gt; КН
     </code></pre>
   </section>
 
@@ -158,8 +158,10 @@ const student = {
   }
 };
 
-const { group, name: { first, last: lastName } } = student;
-lastName; //=&gt; Петренко
+const { group: groupName, name: { first: firstName, last: lastName } } = student;
+console.log(firstName); //=&gt; Василь
+console.log(lastName); //=&gt; Петренко
+console.log(groupName); //=&gt; КН
     </code></pre>
   </section>
 
@@ -219,7 +221,7 @@ room['Відповідальний за пожежну безпеку']; // Мо
 
 Object.keys(room); // ['name']
 
-room['Відповідальний за пожежну безпеку'] = 'Шемет Є. О.';
+room['Відповідальний за пожежну безпеку'] = 'Петров В.В.';
 room['Відповідальний за пожежну безпеку']; // Мотора В. Ф.
     </code></pre>
   </section>
@@ -243,7 +245,7 @@ Object.defineProperty(room, 'responsible', {
 });
 
 room.responsible; //=&gt; Мотора В. Ф.
-room.responsible = 'Шемет Є.О.'; //! Uncaught Не можна так
+room.responsible = 'Петров В.В.'; //! Uncaught Не можна так
     </code></pre>
   </section>
 
@@ -262,7 +264,7 @@ const room = {
 };
 
 room.responsible; //=&gt; Мотора В. Ф.
-room.responsible = 'Шемет Є.О.'; //! Uncaught Не можна так
+room.responsible = 'Петров В.В.'; //! Uncaught Не можна так
     </code></pre>
   </section>
 </section>
@@ -314,9 +316,9 @@ function hello() {
 }
 
 hello.count = 0;
-hello(); //=&gt; 1
-hello.count; //=&gt; 0
-count; //=&gt; 1
+console.log(hello()); //=&gt; 1
+console.log(hello.count); //=&gt; 0
+console.log(count); //=&gt; 1
     </code></pre>
   </section>
 </section>
@@ -362,12 +364,12 @@ const student = {
 };
 
 const teacher = {
-  name: 'Євген Олександрович'
+  name: 'Єгор Леонідович'
 };
 
 teacher.hello = student.greet;
 teacher.hello();
-// Привіт Євген Олександрович
+// Привіт Єгор Леонідович
     </code></pre>
   </section>
 
@@ -550,11 +552,11 @@ const sudent = {
     <pre><code class="javascript" data-trim>
 const dog = {
   old_bark: function() {
-    aler('Старе Гав');
+    alert('Старе Гав');
   },
 
   bark() {
-    aler('Гав');
+    alert('Гав');
   }
 };
     </code></pre>
@@ -564,7 +566,7 @@ const dog = {
     <h3>Розгортування об'єкта</h3>
 
     <pre><code class="javascript" data-trim>
-const sudent = {
+const student = {
   group: 'КН'
 };
 
@@ -579,7 +581,7 @@ const another_student = {
     <h3>Деструкція</h3>
 
     <pre><code class="javascript" data-trim>
-const sudent = {
+const student = {
   group: 'КН'
 };
 
