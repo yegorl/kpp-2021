@@ -1,4 +1,4 @@
-# Крос-платформне програмування (весна 2020)
+# Крос-платформне програмування (весна 2021)
 
 ## Викладач
 Ольшевський Єгор Леонідович [yegorl@vntu.edu.ua](mailto:yegorl@vntu.edu.ua)
@@ -203,14 +203,3 @@
   - Electron
 - [Слайди](/slides/26-electron)
 
-#### Лекція 27: Hello React
-- Теми:
-  - React
-  - create-react-app
-- [Слайди](/slides/27-hello-react)
-
-#### Лекція 28: React
-- Теми:
-  - React
-  - JSX
-- [Слайди](/slides/28-react)
